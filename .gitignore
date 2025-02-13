@@ -1,8 +1,0 @@
-a.out
-*.out
-!*.c
-!*.h
-!*.md
-!Makefile
-.vscode
-*.dSYM
