@@ -1,12 +1,11 @@
+# Ignore all files without extensions in any folder
+*
+!*.*
+!*/
+
+# Ignore specific files
 a.out
 *.out
-**/[^.]*
-
-# Exceptions for specific file types
-!*.c
-!*.h
-!*.md
-!Makefile
 .vscode
 *.dSYM
 # Ignore .DS_Store files
