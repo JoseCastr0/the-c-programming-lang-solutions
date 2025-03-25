@@ -2,7 +2,6 @@
 #define MAXLINE 1000    /* maximum input line size */
 
 int getLine(char line[], int maxline);
-int removeblanks(char s[]);
 void reverse(char s[]);
 /*
     Write a function reverse(s) that reverses the character string s. Use it to write a program
