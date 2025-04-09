@@ -9,25 +9,43 @@
 
 #define MAXLINE 1000
 
+int htoi(char s[]);
+
 main() {
-    char hex[MAXLINE];
-    int i, c, n;
+    
+    int c, i, lim, result;
+    char s[] = "42";
 
-    i = 0;
-    while ((c = getchar()) != EOF && c != '\n') {
-        hex[i] = c;
-        ++i;
-    }
-    hex[i] = '\0';
-
-    n = htoi(hex);
-    printf("Result: %d\n", n);
+    result = htoi(s);
+    
+    printf("Result: %d", result);
+    // expect: s = 109
 
     return 0;
 }
 
 // idea: hacer TDD
 int htoi(char s[]) {
-    return 0;
+    enum loop { NO, YES };
+    enum loop okloop = YES;
+    int n = 0;
+    int i = 0;
+
+    while (okloop == YES) {
+        if (s[i] >= '0' && s[i] <= '9') {
+            n = 16 * n + (s[i] - '0');
+            ++i;
+        } else if (s[i] >= 'a' && s[i] <= 'f') {
+            n = (16 * n + (s[i] - '0')) + 10;
+            ++i;
+        } else if (s[i] >= 'A' && s[i] <= 'F') {
+            n = (16 * n + (s[i] - 'A')) + 10;
+            ++i;
+        } else {
+            okloop = NO;
+        }
+
+    }
+    return n;
 }
 
